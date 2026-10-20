@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Network Diagnostic Report</title>
+<style>
+:root{color-scheme:light;--ink:#17243a;--muted:#657188;--line:#dce4ef;--blue:#3169e2;--bg:#f5f8fd}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+.wrap{max-width:990px;margin:auto;padding:36px 24px 70px}header{background:linear-gradient(115deg,#11213e,#214b90);border-radius:18px;color:#fff;padding:34px 38px}
+.eyebrow{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#c4d6fa;font-weight:700}
+h1{font-size:30px;letter-spacing:-.7px;margin:12px 0 6px}header p{margin:0;color:#d9e4f8}.hero{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+.chip{display:inline-block;border-radius:100px;padding:5px 12px;font-size:11px;font-weight:800;letter-spacing:.9px}
+.chip.pass{background:#d9f8e7;color:#126541}.chip.warn{background:#fff1d1;color:#895603}.chip.fail{background:#ffe0e0;color:#952828}.chip.skip,.chip.info{background:#e5eaf3;color:#56657d}
+header .chip{font-size:13px;padding:10px 18px}.demo{margin-top:18px;background:#fff2c8;border:1px solid #e6d18b;border-radius:10px;padding:11px 16px;font-weight:700;color:#735400}
+section{margin-top:27px}.section-title{font-size:18px;margin:0 0 13px;letter-spacing:-.3px}.panel,.test{background:#fff;border:1px solid var(--line);border-radius:13px;padding:23px;box-shadow:0 3px 17px rgba(18,39,80,.03)}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:13px}.metric{background:white;border:1px solid var(--line);border-radius:12px;padding:17px 19px;min-width:0}
+.metric-label{font-size:11px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.7px}.metric-value{font-size:16px;overflow-wrap:anywhere;font-weight:700;margin-top:5px}
+.tests{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.test h3{margin:0;font-size:16px}.test p{margin:13px 0;color:#344054;overflow-wrap:anywhere}.test-head{display:flex;justify-content:space-between;gap:12px;align-items:center}.meta{display:flex;flex-wrap:wrap;gap:9px;color:var(--muted);font-size:12px}.meta span{background:#f2f5fa;padding:3px 7px;border-radius:5px;overflow-wrap:anywhere}
+table{width:100%;border-collapse:collapse}th{text-align:left;font-size:12px;letter-spacing:.6px;text-transform:uppercase;color:var(--muted)}td,th{padding:10px;border-bottom:1px solid var(--line)}tr:last-child td{border-bottom:0}td{overflow-wrap:anywhere}ul{padding-left:22px}li{margin:7px 0}.muted,footer{color:var(--muted)}footer{margin-top:24px;font-size:12px}
+@media(max-width:620px){.tests{grid-template-columns:1fr}.wrap{padding:16px 12px 45px}header{padding:24px}h1{font-size:24px}}@media print{body{background:#fff}.wrap{padding:0}.panel,.test,.metric{box-shadow:none}header{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style></head><body><main class="wrap">
+<header><div class="eyebrow">IT Support / Diagnostics</div><div class="hero"><div><h1>Network Diagnostic Report</h1><p>Generated: 2026-10-20T15:55:27+00:00</p></div><span class="chip warn">WARN</span></div></header>
+<div class="demo">DEMO DATA · This is a simulated report, not a live diagnostic.</div>
+<section><h2 class="section-title">System overview</h2><div class="metrics">
+<div class="metric"><div class="metric-label">Device / hostname</div><div class="metric-value">support-laptop.example</div></div>
+<div class="metric"><div class="metric-label">Operating system</div><div class="metric-value">macOS (DEMO)</div></div>
+<div class="metric"><div class="metric-label">Default gateway</div><div class="metric-value">192.0.2.1</div></div>
+<div class="metric"><div class="metric-label">DNS servers</div><div class="metric-value">203.0.113.53</div></div>
+</div></section>
+<section><h2 class="section-title">Connectivity checks</h2><div class="tests"><article class="test"><div class="test-head"><h3>DNS resolution</h3><span class="chip pass">pass</span></div><p>Resolved example.com successfully</p><div class="meta"><span>Duration: 21.4 ms</span><span>domain: <b>example.com</b></span> <span>addresses: <b>[&#x27;93.184.215.14&#x27;]</b></span></div></article>
+<article class="test"><div class="test-head"><h3>ICMP ping</h3><span class="chip warn">warn</span></div><p>No ping response from 1.1.1.1; ICMP might be blocked</p><div class="meta"><span>Duration: 3000 ms</span><span>host: <b>1.1.1.1</b></span></div></article>
+<article class="test"><div class="test-head"><h3>TCP connectivity</h3><span class="chip pass">pass</span></div><p>Connected to example.com:443</p><div class="meta"><span>Duration: 42.1 ms</span><span>host: <b>example.com</b></span> <span>port: <b>443</b></span> <span>remote_ip: <b>93.184.215.14</b></span></div></article>
+<article class="test"><div class="test-head"><h3>HTTPS availability</h3><span class="chip pass">pass</span></div><p>HTTPS returned HTTP 200</p><div class="meta"><span>Duration: 98.8 ms</span><span>url: <b>https://example.com/</b></span> <span>http_status: <b>200</b></span></div></article></div></section>
+<section><h2 class="section-title">Network interfaces</h2><div class="panel"><table><thead><tr><th>Interface</th><th>Type</th><th>IP address</th></tr></thead><tbody><tr><td>en0</td><td>IPV4</td><td>192.0.2.10</td></tr>
+<tr><td>lo0</td><td>IPV4</td><td>127.0.0.1</td></tr>
+<tr><td>lo0</td><td>IPV6</td><td>::1</td></tr></tbody></table></div></section>
+<section><h2 class="section-title">Findings and next steps</h2><div class="panel"><ul><li>Ping did not succeed. This alone does not confirm internet failure; ICMP may be filtered.</li></ul></div></section>
+<footer>Network Diagnostic Tool v1.0 · This report may contain private IP addresses and hostname. Review before sharing.</footer>
+</main></body></html>
