@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <title>Network Diagnostic Tool · Desktop</title>
+  <link rel="stylesheet" href="/assets/style.css" />
+  <script src="/assets/app.js" defer></script>
+</head>
+<body>
+<svg aria-hidden="true" class="icon-defs" xmlns="http://www.w3.org/2000/svg">
+<symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10h-6v-7H9v7H3z"/></symbol>
+<symbol id="i-network" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="16" y="16" width="6" height="6" rx="1"/><path d="M12 8v4m-6 4v-4h12v4"/></symbol>
+<symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0"/></symbol>
+<symbol id="i-bars" viewBox="0 0 24 24"><path d="M4 21v-5m5 5V11m5 10V7m5 14V3"/></symbol>
+<symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 2h8l5 5v15H6z"/><path d="M14 2v5h5M9 13h7M9 17h7"/></symbol>
+<symbol id="i-chart" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m6 16 4-5 3 2 5-6"/></symbol>
+<symbol id="i-wifi" viewBox="0 0 24 24"><path d="M2 9a16 16 0 0 1 20 0M5 12a11 11 0 0 1 14 0M8 15a6 6 0 0 1 8 0"/><circle cx="12" cy="19" r="1" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-monitor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M12 18v4m-6 0h12"/></symbol>
+<symbol id="i-router" viewBox="0 0 24 24"><rect x="2" y="11" width="20" height="9" rx="2"/><path d="M7 11V6m10 5V6M5 3l2 3 2-3m6 0 2 3 2-3"/><circle cx="7" cy="16" r="1" fill="currentColor" stroke="none"/><circle cx="11" cy="16" r="1" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c-6 5-6 13 0 18M12 3c6 5 6 13 0 18"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="10" cy="10" r="7"/><path d="m15 15 6 6"/></symbol>
+<symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 0 0-14-5L3 9m0-6v6h6M4 13a8 8 0 0 0 14 5l3-3m0 6v-6h-6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></symbol>
+<symbol id="i-activity" viewBox="0 0 24 24"><path d="M2 12h4l3-7 5 14 3-7h5"/></symbol>
+<symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l2-2"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="12" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+<symbol id="i-route" viewBox="0 0 24 24"><circle cx="5" cy="5" r="2"/><circle cx="19" cy="19" r="2"/><path d="M7 5h8a4 4 0 0 1 0 8H9a3 3 0 0 0 0 6h8"/></symbol>
+<symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6m-6 3h6m-6-3c0-3-4-5-4-10a7 7 0 0 1 14 0c0 5-4 7-4 10"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></symbol>
+<symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h2"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+<symbol id="i-download" viewBox="0 0 24 24"><path d="M12 2v14m-5-5 5 5 5-5M4 17v4h16v-4"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+<symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 19H2zM12 9v5m0 3v1"/></symbol>
+</svg>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-top">
+      <div class="traffic"><span></span><span></span><span></span></div>
+      <button class="mobile-close icon-button" id="mobile-close" aria-label="Close menu"><svg><use href="#i-close"/></svg></button>
+      <div class="logo"><svg><use href="#i-activity"/></svg></div>
+      <div class="brand-mini">NET<span>DIAG</span><small>DESKTOP / V2.0</small></div>
+    </div>
+    <nav class="nav" aria-label="Dashboard sections">
+      <button class="nav-link selected" data-jump="overview"><svg><use href="#i-home"/></svg> Overview</button>
+      <button class="nav-link" data-jump="interfaces"><svg><use href="#i-network"/></svg> Interfaces</button>
+      <button class="nav-link" data-jump="dns"><svg><use href="#i-database"/></svg> DNS</button>
+      <button class="nav-link" data-jump="connectivity"><svg><use href="#i-bars"/></svg> Connectivity</button>
+      <button class="nav-link" data-jump="activity"><svg><use href="#i-doc"/></svg> Logs</button>
+      <button class="nav-link" data-jump="reports"><svg><use href="#i-chart"/></svg> Reports</button>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="side-glow"></div>
+      <div class="system-card"><span class="glow-dot" id="sys-dot"></span><div><b>Local dashboard</b><small>Runs on this computer</small></div></div>
+    </div>
+  </aside>
+  <main class="main" id="overview">
+    <header class="topbar">
+      <div class="heading-wrap">
+        <button id="mobile-open" class="mobile-open icon-button" aria-label="Open menu"><svg><use href="#i-menu"/></svg></button>
+        <div><div class="eyebrow">IT SUPPORT / NETWORK INTELLIGENCE</div><h1>Network Diagnostic <span>Tool</span></h1><p class="subhead">IP <span>·</span> DNS <span>·</span> Connectivity <span>·</span> Reachability</p></div>
+      </div>
+      <div class="header-tools"><label class="search-bar"><svg><use href="#i-search"/></svg><input id="search" type="search" placeholder="Find a diagnostic..." aria-label="Find a diagnostic"/><kbd>⌘ K</kbd></label><button class="icon-button refresh" id="refresh-btn" aria-label="Refresh local IP information" title="Refresh local information"><svg><use href="#i-refresh"/></svg></button></div>
+    </header>
+    <div id="demo-banner" class="demo-banner" hidden><svg><use href="#i-alert"/></svg> DEMO MODE — simulated values. Run normally to perform live diagnostics.</div>
+    <section class="overview-bar" aria-label="Network summary">
+      <div class="metric-card"><div class="circle-icon blue"><svg><use href="#i-monitor"/></svg></div><div><div class="metric-name">Local IP</div><strong class="metric-value" id="local-ip">Detecting...</strong></div></div>
+      <div class="metric-card"><div class="circle-icon purple"><svg><use href="#i-router"/></svg></div><div><div class="metric-name">Gateway</div><strong class="metric-value" id="gateway">Detecting...</strong></div></div>
+      <div class="metric-card"><div class="circle-icon cyan"><svg><use href="#i-database"/></svg></div><div><div class="metric-name">DNS Status</div><strong class="metric-value status-pair" id="dns-status">Not tested</strong></div></div>
+      <div class="metric-card"><div class="circle-icon green"><svg><use href="#i-globe"/></svg></div><div><div class="metric-name">Internet / HTTPS</div><strong class="metric-value status-pair" id="internet-status">Not tested</strong></div></div>
+      <button class="gradient-button report-top" id="export-top"><svg><use href="#i-doc"/></svg> Generate Report</button>
+    </section>
+    <div class="quick-controls"><div class="quick-left"><span class="section-kicker"><span class="tiny-pulse"></span> LIVE DIAGNOSTICS</span><span class="last-updated" id="last-updated">Waiting for scan</span></div><div class="quick-right"><label class="toggle-label">Auto-refresh view <input id="auto-refresh" type="checkbox" role="switch"/><span class="switch"></span></label><button id="run-all" class="outline-button"><svg><use href="#i-activity"/></svg> Run all checks</button></div></div>
+    <div class="dashboard-grid" id="dashboard-grid">
+      <section class="panel" id="interfaces" data-search="network interfaces wifi ethernet adapter ip ipv6"><div class="panel-title"><h2><svg><use href="#i-network"/></svg> Network Interfaces</h2><span class="micro-label">LOCAL</span></div><div class="interface-list" id="interface-list"><p class="placeholder">Reading network adapters...</p></div><div class="panel-footer">Adapter details are read-only. Network settings are never changed.</div></section>
+      <section class="panel" id="ip-config" data-search="ip configuration ipv4 ipv6 subnet gateway dns servers"><div class="panel-title"><h2><svg><use href="#i-doc"/></svg> IP Configuration</h2><span class="micro-label">SYSTEM</span></div><div class="segmented" role="group" aria-label="IP family"><button id="tab-ipv4" class="segment selected" aria-pressed="true">IPv4</button><button id="tab-ipv6" class="segment" aria-pressed="false">IPv6</button></div><div id="ip-fields" class="rows-data"></div></section>
+      <section class="panel" id="dns" data-search="dns domain resolution lookup name servers"><div class="panel-title"><h2><svg><use href="#i-database"/></svg> DNS Resolution Test</h2><span class="micro-label">LOOKUP</span></div><div class="input-row"><input id="dns-target" type="text" value="example.com" aria-label="DNS domain" spellcheck="false"/><button class="action-button" data-test="dns">Test</button></div><div class="result-message" id="dns-result"><span class="soft-status">Not tested</span><span class="result-meta">—</span></div><div class="inner-surface kv-list" id="dns-details"><div><span>Domain</span><b>—</b></div><div><span>Resolved IPs</span><b>—</b></div><div><span>DNS server(s)</span><b>—</b></div><div><span>Response time</span><b>—</b></div></div></section>
+      <section class="panel" id="ping-panel" data-search="ping latency icmp jitter packet loss"><div class="panel-title"><h2><svg class="accent-pink"><use href="#i-activity"/></svg> Ping / Latency Test</h2><span class="micro-label">ICMP</span></div><div class="input-row"><input id="ping-target" type="text" value="1.1.1.1" aria-label="Ping IP or host" spellcheck="false"/><button class="action-button pink-btn" data-test="ping">Start</button></div><div class="latency-stats"><div><strong id="ping-latest">—</strong><small>Latest</small></div><div><strong id="ping-min">—</strong><small>Minimum</small></div><div><strong id="ping-max">—</strong><small>Maximum</small></div><div><strong id="ping-count">0</strong><small>Samples</small></div></div><div class="chart-container"><svg id="ping-chart" viewBox="0 0 430 112" preserveAspectRatio="none" aria-label="Ping latency chart" role="img"><defs><linearGradient id="area" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ff2fa0" stop-opacity="0.36"/><stop offset="1" stop-color="#ff2fa0" stop-opacity="0"/></linearGradient></defs><path class="grid-line" d="M0 25H430 M0 60H430 M0 95H430"/><path id="ping-area" fill="url(#area)" d=""/><path id="ping-line" fill="none" stroke="#ff42ad" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d=""/></svg><div class="empty-chart" id="chart-empty">Run ping to visualize latency</div></div><div class="fineprint" id="ping-note">Ping can be blocked without an internet outage.</div></section>
+      <section class="panel" id="connectivity" data-search="tcp ports connect 53 80 443 firewall"><div class="panel-title"><h2><svg class="accent-blue"><use href="#i-link"/></svg> TCP Port Test</h2><button class="text-button" id="test-all-ports">Test all</button></div><div class="tcp-host"><span>Target host</span><input id="tcp-host" type="text" value="example.com" aria-label="TCP host" spellcheck="false"/></div><div class="port-list" id="port-list"><button class="port-row" data-port="53"><span class="port-color amber-dot"></span><span class="port-name">Port 53 <small>DNS</small></span><span class="state-chip pending" id="port-53">Not tested</span><svg><use href="#i-arrow"/></svg></button><button class="port-row" data-port="80"><span class="port-color blue-dot"></span><span class="port-name">Port 80 <small>HTTP</small></span><span class="state-chip pending" id="port-80">Not tested</span><svg><use href="#i-arrow"/></svg></button><button class="port-row" data-port="443"><span class="port-color purple-dot"></span><span class="port-name">Port 443 <small>HTTPS</small></span><span class="state-chip pending" id="port-443">Not tested</span><svg><use href="#i-arrow"/></svg></button></div><p class="panel-footer">Port 53 uses 1.1.1.1 by default; other ports use the target host.</p></section>
+      <section class="panel" id="https" data-search="https internet web ssl tls http security availability"><div class="panel-title"><h2><svg class="accent-amber"><use href="#i-lock"/></svg> HTTPS Access Test</h2><span class="micro-label">TLS</span></div><div class="input-row"><input id="https-target" type="url" value="https://example.com/" aria-label="HTTPS URL" spellcheck="false"/><button class="action-button" data-test="https">Test</button></div><div class="https-body"><div class="success-orb" id="https-orb"><svg><use href="#i-check"/></svg><span id="https-orb-label">Untested</span></div><div class="https-info kv-list" id="https-details"><div><span>HTTP status</span><b>—</b></div><div><span>TLS certificate</span><b>—</b></div><div><span>Response time</span><b>—</b></div><div><span>Result</span><b>Not tested</b></div></div></div></section>
+      <section class="panel" id="trace" data-search="traceroute route reachability hops gateway"><div class="panel-title"><h2><svg class="accent-blue"><use href="#i-route"/></svg> Reachability / Trace</h2><span class="micro-label">HOPS</span></div><div class="input-row"><input id="trace-target" type="text" value="1.1.1.1" aria-label="Trace route target" spellcheck="false"/><button class="action-button purple-btn" data-test="trace">Trace</button></div><div id="trace-results" class="route-list"><p class="placeholder">Run trace to inspect intermediate hops.</p></div></section>
+      <section class="panel" id="recommendations" data-search="analysis recommendations health errors findings issues"><div class="panel-title"><h2><svg class="accent-amber"><use href="#i-bulb"/></svg> Recommendations</h2><span class="micro-label">INSIGHTS</span></div><div id="findings" class="finding-list"><div class="finding"><span class="finding-mark neutral">i</span><div><b>Ready for diagnostics</b><small>Run all checks to generate recommendations.</small></div></div></div></section>
+      <section class="panel" id="activity" data-search="history logs recent test activity"><div class="panel-title"><h2><svg><use href="#i-clock"/></svg> Recent Test Activity</h2><span class="micro-label">SESSION</span></div><div id="activity-list" class="activity-list"><p class="placeholder">No tests run in this session.</p></div><p class="panel-footer">History stays in memory and clears when you close the app.</p></section>
+    </div>
+    <section class="reports-panel" id="reports"><div><span class="section-kicker">EXPORT / REPORTS</span><h2>Technical report, ready to share.</h2><p>Export live system information and completed diagnostics as an offline HTML or structured JSON file. Review local IPs and hostnames before sharing.</p></div><div class="report-buttons"><a href="/api/report.html" class="gradient-button" id="report-html"><svg><use href="#i-download"/></svg> Download HTML</a><a href="/api/report.json" class="outline-button" id="report-json"><svg><use href="#i-download"/></svg> Download JSON</a></div></section>
+    <footer>NETDIAG DESKTOP v2.0 <span>•</span> LOCAL-FIRST <span>•</span> NO ADMIN RIGHTS REQUIRED <span>•</span> MAC / WINDOWS / LINUX</footer>
+  </main>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
