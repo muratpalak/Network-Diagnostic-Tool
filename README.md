@@ -13,6 +13,17 @@
 <!-- END: SUPPORT SCENARIOS / IT SUPPORT EVIDENCE -->
 
 
+<!-- BEGIN: ENGINEERING EVIDENCE -->
+
+## Technical evidence / Technische Nachweise / Teknik kanıtlar
+
+- **[Architecture & scope](docs/ARCHITECTURE.md)** — concrete modules, data flow, privacy/security boundaries.
+- **[Verification matrix](docs/VERIFICATION_MATRIX.md)** — test inputs, expected results and commands; check GitHub Actions for actual outcomes.
+- **[Changelog](CHANGELOG.md)** — real documentation/testing changes, no invented release history.
+> Training scenarios and portfolio records are fictional unless explicitly labelled professional history. Passing tests does not establish production readiness.
+
+<!-- END: ENGINEERING EVIDENCE -->
+
 <!-- BEGIN: REAL APPLICATION PREVIEW -->
 
 ## Interface preview / Benutzeroberfläche
