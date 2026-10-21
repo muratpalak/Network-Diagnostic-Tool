@@ -1,5 +1,15 @@
 # Network Diagnostic Tool
 
+<!-- BEGIN: REAL APPLICATION PREVIEW -->
+
+## Interface preview / Benutzeroberfläche
+
+![Network Diagnostic Tool local demo dashboard](dashboard-preview.png)
+
+> Screenshot captured from the **running application with fictional/demo data**. This is a locally hosted portfolio demo, not a production deployment. / *Echter Screenshot aus der lokal gestarteten Demo mit Beispieldaten.*
+
+<!-- END: REAL APPLICATION PREVIEW -->
+
 [![Network Diagnostic Tests](https://github.com/muratpalak/Network-Diagnostic-Tool/actions/workflows/tests.yml/badge.svg)](https://github.com/muratpalak/Network-Diagnostic-Tool/actions/workflows/tests.yml)
 
 **Cross-platform local network troubleshooting and reporting for IT Support.** Python · DNS · Ping · TCP · HTTPS · HTML/JSON reporting. No third-party runtime dependencies; requires Python 3.10+.
