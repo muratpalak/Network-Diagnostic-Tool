@@ -1,5 +1,18 @@
 # Network Diagnostic Tool
 
+<!-- BEGIN: SUPPORT SCENARIOS / IT SUPPORT EVIDENCE -->
+
+## IT Support scenarios / Praxisfälle / Destek senaryoları
+
+**[Read the step-by-step scenarios](docs/SUPPORT_SCENARIOS.md)** — Layered connectivity diagnosis: DNS, ping, TCP and HTTPS.
+
+**DE:** Praxisfälle: systematische DNS-/TCP-/HTTPS-Fehleranalyse. · **TR:** Örnek destek vakaları; belirtiler, kontrol adımları ve test kanıtları.
+
+> These are **fictional, reproducible portfolio scenarios**, not real client incidents.
+
+<!-- END: SUPPORT SCENARIOS / IT SUPPORT EVIDENCE -->
+
+
 <!-- BEGIN: REAL APPLICATION PREVIEW -->
 
 ## Interface preview / Benutzeroberfläche
